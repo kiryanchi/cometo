@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import * as S from './style'
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 
 export default function Nav() {
   const [logined, setLogined] = useState(false);
@@ -10,12 +11,18 @@ export default function Nav() {
   return <S.Nav>
     <div className='left'>
       <Link to={'/'}>
-        헬퍼
+        <img src={logo} alt='logo' />
       </Link>
+    </div>
+    <div className='middle'>
+      <h1>헬퍼</h1>
+      <span>
+        당신의 삶의 플러스
+      </span>
     </div>
     <div className='right'>
       {logined ? <div className='logined'>
-        login
+        <Link to="/profile">{logined}</Link>
       </div> :
         <div className='unlogined'>
           <Link to='/behelper'>
