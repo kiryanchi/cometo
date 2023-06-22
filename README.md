@@ -39,7 +39,7 @@
 13. 검토 + 만들기를 눌러 만들어준다.
 
 #
-##환경 변수
+## 환경 변수
 >Github Repository Setting에서 Secrets and variabls의 Actions를 들어가서 아래값들을 name과 secret에 값을 넣어준다.
 
 >PORT = 8080
