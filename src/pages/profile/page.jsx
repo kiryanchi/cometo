@@ -49,7 +49,6 @@ export default function Profile() {
     detail: "졸려요"
   });
   useEffect(e => {
-    setInfos(e => ({ ...e, matching: true }));
     setReqs(e => e);
   }, []);
   return <>
@@ -90,18 +89,25 @@ export default function Profile() {
               </div>
             </div>
             <div className="buttons">
-              <button className="reject">거절</button>
-              <button>수락</button>
+              <button className="reject" onClick={e => {
+                setReqs(e => {
+                  return e.filter(a => a?.name !== reqs[focus]?.name);
+                });
+              }}>거절</button>
+              <button onClick={e => {
+                setInfos(e => ({ ...e, matching: true }));
+                setMatch(reqs[focus]);
+              }}>수락</button>
             </div></> :
             <>
               <div className="clientinfo">
-                <p>이름 : {reqs[focus]?.name}</p>
-                <p>성별 : {reqs[focus]?.gender}</p>
-                <p>증상 : {reqs[focus]?.symptom.map(i => i)}</p>
-                <p>주소 : {reqs[focus]?.address}</p>
-                <p>예약 날짜 : {reqs[focus]?.date}</p>
-                <p>예약 시간 : {reqs[focus]?.hour}</p>
-                <p>상세 : {reqs[focus]?.detail}</p>
+                <p>이름 : {match?.name}</p>
+                <p>성별 : {match?.gender}</p>
+                <p>증상 : {match?.symptom.map(i => i)}</p>
+                <p>주소 : {match?.address}</p>
+                <p>예약 날짜 : {match?.date}</p>
+                <p>예약 시간 : {match?.hour}</p>
+                <p>상세 : {match?.detail}</p>
               </div>
             </>
           }

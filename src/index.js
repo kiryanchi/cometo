@@ -11,20 +11,21 @@ import Waiting from './pages/waiting/page';
 import Symptom from './pages/symptom/page';
 import Profile from './pages/profile/page';
 
+const url = '';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path={'/'} element={<App />} />
-        <Route path={'/login'} element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/signup/email' element={<SignupEmail />} />
+        <Route path={'/'} element={<App url={url} />} />
+        <Route path={'/login'} element={<Login url={url} />} />
+        <Route path='/signup' element={<Signup url={url} />} />
+        <Route path='/signup/email' element={<SignupEmail url={url} />} />
         <Route path='/behelper' element={<Behelper />} />
-        <Route path='/apply' element={<Apply />} />
-        <Route path='/waiting' element={<Waiting />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/symptom' element={<Symptom />} />
+        <Route path='/apply' element={<Apply url={url} />} />
+        <Route path='/waiting' element={<Waiting url={url} />} />
+        <Route path='/profile' element={<Profile url={url} />} />
+        <Route path='/symptom' element={<Symptom url={url} />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
