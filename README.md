@@ -38,6 +38,24 @@
 12. 세부정보에서 GitHub 계정 권한 부여를 해주고 조직은 hackersfround-kr로 선택 후 자신의 리포지토리로 선택 후 분기는 main으로 선택해준다.
 13. 검토 + 만들기를 눌러 만들어준다.
 
+프론트
+1. vscode Azure 접속
+   Resources 에서 해당 레포지토리가 있는 리소스에서
+   App Service 에 있는 {웹 앱 이름}을 우클릭하여
+   Deploy to Web App을 선택한다.
+
+2. 이 상태에서 상단에 Select the folder to deploy {웹 앱 이름}을 선택하여
+   배포를 행한다.
+
+3. ctrl + shift + ` 키를 눌러 터미널을 열고 OUTPUT이라 써져 있는 창을 클릭한다.
+   진행상황을 확인한다.
+
+3-1. 여기서 진행중에 info There appears to be trouble with your netwokr connection 이라는 메시지가 출력되면,
+     터미널을 열고 yarn cache clean을 통해 캐시를 지우고 yarn install을 실행해 복구 시킨다.
+     이런 과정을 시행하면 이런 오류 메시지가 나타나지 않을 것이다.
+
+4. Done in OOsec(s) 라고 메시지가 출력되면 배포가 완료되었다.
+
 ### 사전 준비 사항
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**Github 계정
