@@ -37,6 +37,7 @@
 ### 사전 준비 사항
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**Github 계정
++ Gthub에서 저희의 레포지토리를 포크 해주세요 !! (*포크를 하지않으면 접근을 할 수가 없기 때문에 꼭 해주세요 !!)
 + Github 계정 -> [회원가입 링크](https://github.com/)
 + Azure 구독이 있는 계정 -> [Azure 링크](azure.microsoft.com)
 + Vscode 설치 -> [VScode 다운로드 링크](https://code.visualstudio.com/download)
@@ -58,7 +59,7 @@
 11. 웹 앱을 선택해줍니다.
 12. 인스턴스 정보에서 이름은 cometo1, 게시는 코드, 런타임 스택은 Node 18 LTS, 운영체제는 리눅스, 지역은 Korea South으로 선택한 후 배포로 넘어갑니다.
 13. GitHub Actions 설정에서 지속적인 배포 사용을 선택합니다.
-14. 세부정보에서 GitHub 계정 권한 부여를 해주고 조직은 hackersfround-kr로 선택 후 자신의 리포지토리로 선택 후 분기는 main으로 선택해준다.
+14. 세부정보에서 GitHub 계정 권한 부여를 해주고 조직은 자신의 깃허브 아이디로 선택 후 자신의 레포지토리에 있는 cometo를 선택 후 분기는 main으로 선택해준다.
 15. 검토 + 만들기를 눌러 만들어준다
 
 # 웹 배포
