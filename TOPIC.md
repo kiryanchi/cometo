@@ -33,6 +33,7 @@ cometo
 [images/로그인.png](./images/로그인.png)
 [images/회원가입.png](./images/회원가입.png)
 [images/요청.png](./images/요청.png)
+[images/복지사요청서.png](./images/복지사요청서.png)
 
 
 ## 제품 소개 슬라이드
