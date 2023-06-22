@@ -62,22 +62,22 @@
 15. 검토 + 만들기를 눌러 만들어준다
 
 # 웹 배포
-프론트 확인
-리소스 그룹 만들기
-    이름은 rg-hg(랜덤숫자조합으로)
-    위치는 Korean Central로 선택
-웹 앱 선택 만들기
-인스턴스 정보 
-    이름 - rg-hg(랜덤숫자조합으로)
-    게시 - 정적 웹 앱
-    런타임 스택 - Node.js 18 LTS
-    지역 - Korea Central
-검토 + 만들기 실행
-extenstion에서 azure 설치
-vscode Azure 접속 & 로그인
-Resources 에서 해당 레포지토리가 있는 리소스에서 
-App Service 에 있는 {웹 앱 이름}을 우클릭하여
-Deploy to Web App을 선택한다.
+1. 프론트 확인
+2. 리소스 그룹 만들기
+   + 이름은 rg-hg(랜덤숫자조합으로)
+   + 위치는 Korean Central로 선택
+3. 웹 앱 선택 만들기
+4. 인스턴스 정보 
+   + 이름 - rg-hg(랜덤숫자조합으로)
+   + 게시 - 정적 웹 앱
+   + 런타임 스택 - Node.js 18 LTS
+   + 지역 - Korea Central
+5. 검토 + 만들기 실행
+6. extenstion에서 azure 설치
+7. vscode Azure 접속 & 로그인
+8. Resources 에서 해당 레포지토리가 있는 리소스에서 
+9. App Service 에 있는 {웹 앱 이름}을 우클릭하여
+10. Deploy to Web App을 선택한다.
 
 이 상태에서 상단에 Select the folder to deploy {웹 앱 이름}을 선택하여 
 배포를 행한다.
