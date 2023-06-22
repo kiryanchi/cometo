@@ -45,6 +45,7 @@
 + Azure 구독이 있는 계정
 + Vscode 설치
 + Vscode Extension Azure 설치
++ Node.js 18 LTS 설치
 
 ## 시작하기
 
