@@ -1,18 +1,30 @@
 import { useState } from 'react';
 import Nav from '../../components/nav/page';
 import * as S from './style'
+import axios from 'axios';
 
-export default function Login() {
+export default function Login({ url }) {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   return <>
     <Nav />
     <S.Login>
-      <form className='form' onSubmit={e => {
+      <form className='form' onSubmit={async e => {
         e.preventDefault();
-        if (id !== '') {
+        if (id !== '' && pw !== '') {
+          try {
+            await axios.post(`${url}/user/login`, { email: id, password: pw })
+              .then(e => {
+                console.log(e.data);
+              });
+          } catch (e) {
+            console.log(e);
+          }
           localStorage.setItem('logined', JSON.stringify({ id: id, type: 'client' }));
           window.location.href = '/';
+        }
+        else {
+          alert('아이디와 패스워드를 입력해주세요');
         }
       }}>
         <div>로그인</div><br />

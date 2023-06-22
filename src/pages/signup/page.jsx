@@ -5,7 +5,7 @@ import email from '../../assets/email.png';
 import profiel from '../../assets/profile.png';
 import { Link } from "react-router-dom";
 
-export default function Signup() {
+export default function Signup({ url }) {
   return <>
     <Nav />
     <S.Signup>

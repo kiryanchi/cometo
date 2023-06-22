@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Nav from "../../../components/nav/page";
 import * as S from './style';
+import axios from "axios";
 
-export default function SignupEmail() {
+export default function SignupEmail({ url }) {
   const [list, setList] = useState({
     email_id: null,
     email_domain: null,
@@ -90,12 +91,25 @@ export default function SignupEmail() {
           <input className="birthday" onChange={e => setList(a => ({ ...a, birthday: e.target.value }))} value={list.birthday} />
         </div>
       </div>
-      <button className="done" onClick={e => {
+      <button className="done" onClick={async e => {
         if (list.address && list.addressDetail && list.birthday && list.email_domain &&
           list.email_id && list.gender && list.name && list.phone && list.pw && list.re_pw &&
           list.verifynum) {
-          alert('회원가입이 완료되었습니다.');
-          window.location.href = '/login';
+          try {
+            await axios.post(`${url}/user/signup`, {
+              email: `${list.email_id}@${list.email_domain}`,
+              password: list.pw,
+              name: list.name,
+              birth: list.birthday,
+              gender: list.gender
+            }).then(e => {
+              console.log(e.data);
+              alert('회원가입이 완료되었습니다.');
+              window.location.href = '/login';
+            })
+          } catch {
+
+          }
         }
         else {
           alert('모든 항목을 모두 작성해 주세요');

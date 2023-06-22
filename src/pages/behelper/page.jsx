@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Nav from "../../components/nav/page";
 import * as S from './style';
+import axios from "axios";
 
-export default function Behelper() {
+export default function Behelper({ url }) {
   const [list, setList] = useState({
     email_id: null,
     email_domain: null,
@@ -121,12 +122,25 @@ export default function Behelper() {
           <textarea value={list.addressDetail} onChange={e => setList(a => ({ ...a, addressDetail: e.target.value }))} />
         </div>
       </div>
-      <button className="done" onClick={e => {
+      <button className="done" onClick={async e => {
         if (list.address && list.addressDetail && list.birthday && list.email_domain &&
           list.email_id && list.gender && list.name && list.phone && list.pw && list.re_pw &&
           list.verifynum) {
-          alert('회원가입이 완료되었습니다.');
-          window.location.href = '/login';
+          try {
+            await axios.post(`${url}/helper/behelper`,
+              {
+                inGroup: list.belong, phoneNum: list.phone,
+                profileImg: list.profile, proofImg: list.prootfile,
+                proofName: list.proof, info: list.introduce
+              })
+              .then(e => {
+                console.log(e);
+                alert('회원가입이 완료되었습니다.');
+                window.location.href = '/login';
+              })
+          } catch (e) {
+            console.log(e);
+          }
         }
         else {
           alert('모든 항목을 모두 작성해 주세요');

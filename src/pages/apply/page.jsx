@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import Nav from '../../components/nav/page';
 import * as S from './style';
+import axios from 'axios';
 
-export default function Apply() {
+export default function Apply({ url }) {
   const [infos, setInfos] = useState({});
   const [pushes, setPushed] = useState({
     head: [],
@@ -415,9 +416,28 @@ export default function Apply() {
           </div>
         </div>
       </div>
-      <div className='button' onClick={e => {
-        console.log(pushes);
-        window.location.href = '/waiting';
+      <div className='button' onClick={async e => {
+        try {
+          let thepush = {
+            head: pushes.head,
+            knee: pushes.knee,
+            neck: pushes.neck,
+            arms: pushes.arms,
+            foot: pushes.foot,
+            toes: pushes.toes,
+            hand: pushes.hand,
+            legs: pushes.legs,
+            body: pushes.body
+          };
+          await axios.post(`${url}/apply`, { useDate: pushes.date, whereSick: thepush, howSick: pushes.etcs })
+            .then(e => {
+              console.log(e);
+            });
+          console.log(pushes);
+          window.location.href = '/waiting';
+        } catch (e) {
+          console.log(e);
+        }
       }}>
         요청마치기
       </div>

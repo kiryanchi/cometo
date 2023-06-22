@@ -11,7 +11,7 @@ import Waiting from './pages/waiting/page';
 import Symptom from './pages/symptom/page';
 import Profile from './pages/profile/page';
 
-const url = '';
+const url = 'https://helper.mysql.database.azure.com';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
