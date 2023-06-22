@@ -26,6 +26,7 @@ export const Login = styled.div`
       height: 6vh;
       width: 23vw;
       border-radius: 20000px;
+      border: 1px solid black;
     }
     button{
       cursor: pointer;

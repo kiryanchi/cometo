@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import * as S from './style'
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import profile from '../../assets/profile.png';
 
 export default function Nav() {
-  const [logined, setLogined] = useState(false);
+  const [logined, setLogined] = useState("asdfasdf");
   useEffect(e => {
-    setLogined(e => localStorage.getItem("logined"));
+    setLogined(e => JSON.parse(localStorage.getItem("logined"))?.id);
   }, []);
   return <S.Nav>
     <div className='left'>
@@ -22,7 +23,13 @@ export default function Nav() {
     </div>
     <div className='right'>
       {logined ? <div className='logined'>
-        <Link to="/profile">{logined}</Link>
+        <Link to="/profile">
+          <img src={profile} alt='profile' />{logined}님
+        </Link>
+        <button onClick={e => {
+          localStorage.removeItem('logined');
+          window.location.reload();
+        }}>로그아웃</button>
       </div> :
         <div className='unlogined'>
           <Link to='/behelper'>

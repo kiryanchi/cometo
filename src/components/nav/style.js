@@ -64,8 +64,15 @@ export const Nav = styled.div`
       justify-content: space-around;
       align-items: center;
       a{
+        display: flex;
+        align-items: center;
         text-decoration: none;
         color: black;
+        img{
+          width: 50px;
+          object-fit: scale-down;
+          margin-right: 10px;
+        }
         &:active{
           margin-top: 2px;
         }
