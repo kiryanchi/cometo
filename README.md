@@ -38,6 +38,15 @@
 12. 세부정보에서 GitHub 계정 권한 부여를 해주고 조직은 hackersfround-kr로 선택 후 자신의 리포지토리로 선택 후 분기는 main으로 선택해준다.
 13. 검토 + 만들기를 눌러 만들어준다.
 
+#
+##환경 변수
+>Github Repository Setting에서 Secrets and variabls의 Actions를 들어가서 아래값들을 name과 secret에 값을 넣어준다.
+
+>PORT = 8080
+
+>DATABASE_URL='mysql://jaemyeong:123qweasdzxc!@helper.mysql.database.azure.com:3306/helper'
+>SECRET_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQSflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+
 ### 사전 준비 사항
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**Github 계정
